@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %} ALL MEMBERS {% endblock %}
+
+{% block content %}
+
+    <h1> All Members </h1>
+    <ul>
+        {% for x in members %}
+            <li> {{x.first_name}} {{x.last_name}} 
+                {% if x.phone %}
+                    {{x.phone}}
+                {% endif %}
+                <a href="{% url 'member_details' x.id %}"> Click here to visit the member's page </a>
+            </li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}

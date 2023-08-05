@@ -1,0 +1,6 @@
+<h1> Our Master Programs </h1>
+<ul>
+    {% for prog in programs %}
+        <li>Master degree in <a href="{% url 'program_details' prog.id %}">{{prog.title}}</a></li>
+    {% endfor %}
+</ul>

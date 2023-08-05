@@ -1,0 +1,9 @@
+Project: My_University
+
+A university offers some educational programs
+- Programs:
+A program has a title and a description
+A program has a type (category) --> A bachelor OR a master
+
+A program -->> Courses
+a course: title, description, is_active
