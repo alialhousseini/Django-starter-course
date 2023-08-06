@@ -1,0 +1,23 @@
+<title> My university </title>
+
+
+<h1> Welcome to my university </h1>
+
+<h3> Our bachelor programs </h3>
+<ul>
+    {% for prog in programs %}
+    {% if prog.program_type == 'Bachelor' %}
+        <li>Bachelor degree in <a href="{% url 'program_details' prog.id %}">{{prog.title}}</a></li>
+    {% endif %}
+    {% endfor %}
+</ul>
+
+
+<h3> Our Master programs </h3>
+<ul>
+    {% for prog in programs %}
+    {% if prog.program_type == 'Master' %}
+        <li>Master degree in <a href="{% url 'program_details' prog.id %}">{{prog.title}}</a></li>
+    {% endif %}
+    {% endfor %}
+</ul>
