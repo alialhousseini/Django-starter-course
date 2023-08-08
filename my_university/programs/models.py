@@ -10,6 +10,7 @@ class Program(models.Model):
     
     title = models.CharField(max_length=200)
     description = models.TextField()
-    program_type = models.CharField(choices=choices_type)
+    program_type = models.CharField(max_length=200, choices=choices_type)
     
-    
+    def __str__(self):
+        return f"{self.title}"

@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Program
+from courses.models import Course 
 
 # Create your views here.
 def home(request):
@@ -11,8 +12,10 @@ def home(request):
 
 def program_details(request, id):
     program = get_object_or_404(Program, pk=id)
+    courses = Course.objects.all().filter(program=program)
     data = {
-        'program':program
+        'program':program,
+        'courses': courses,
     }
     return render(request, 'pages/program_details.html', data)
 

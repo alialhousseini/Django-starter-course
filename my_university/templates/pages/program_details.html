@@ -2,6 +2,16 @@
 
 <center><p> {{program.description}} </center></p>
 
+<center><h3> Program courses </center></h3>
+<center><ul>
+    {% for course in courses %}
+    {% if course.is_active %}
+    <center><li>{{course.name}}</li><center>
+    {% endif %}
+    {% endfor %}
+</ul></center>
+
+
 
 
 

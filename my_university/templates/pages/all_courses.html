@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<h2> Courses offered by our university </h2>
+<ul>
+    {% for course in courses %}
+    <li> {{course.name}} | Offered in: {% for program in course.programs.all %} {{program.title}} {% endfor %} </li>
+
+    {% endfor %}
+</ul>
+{% endblock %}

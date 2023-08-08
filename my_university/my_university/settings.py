@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'courses.apps.CoursesConfig',
     'programs.apps.ProgramsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -76,11 +77,8 @@ WSGI_APPLICATION = 'my_university.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'university_db',
-        'USER': 'postgres',
-        'PASSWORD': 'Qwefghnm.1!',
-        'HOST': 'localhost',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
         
     }
 }
@@ -119,8 +117,10 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
-
+import os 
 STATIC_URL = 'static/'
+STATIC_ROOT  = os.path.join(BASE_DIR, 'static')
+STATICFILES_DIRS = [ os.path.join(BASE_DIR, 'my_university/static') ]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
